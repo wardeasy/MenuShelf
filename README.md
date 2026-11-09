@@ -8,6 +8,31 @@ Built with Swift and AppKit. No third-party runtime dependencies, accounts, or s
 
 > MenuShelf opens a separate popover. It does not make the system menu bar itself scrollable, move other apps' icons, or guarantee access to every item hidden behind a display notch.
 
+## Download
+
+**[Download MenuShelf for macOS](https://github.com/wardeasy/MenuShelf/releases/latest)** — a ready-to-run universal app for Apple Silicon and Intel. No compiler is needed for the release download.
+
+1. Download `MenuShelf-v0.4.0-universal.zip` from the release's **Assets** section and unzip it.
+2. Quit any previous MenuShelf instance and move `MenuShelf.app` into `~/Applications` (create that folder if necessary).
+3. Open the app and allow **MenuShelf** in **System Settings → Privacy & Security → Accessibility**.
+4. Click its menu bar icon to open the shelf.
+
+The release is signed with a persistent local certificate, not an Apple Developer ID, and is **not notarized by Apple**. macOS may block the first launch. If you trust this download, review the message in **System Settings → Privacy & Security** and use **Open Anyway** when offered. Do not disable Gatekeeper or other system security features.
+
+Release downloads include `SHA256SUMS.txt` for checking the ZIP's integrity:
+
+```sh
+shasum -a 256 -c SHA256SUMS.txt
+```
+
+The checksum detects a damaged or changed file; it is not a substitute for trusting the publisher. Keep the ZIP and checksum file in the same directory when verifying.
+
+## Preview
+
+<img src="preview.png" alt="MenuShelf's scrollable interface with sample menu bar items" width="420">
+
+*The app's interface rendered with sample items. Actual app names, icons, and available menu bar items depend on your Mac.*
+
 ## Features
 
 - **Menu bar popover:** opens directly beneath MenuShelf's icon, without a separate app window or Dock icon.
@@ -27,7 +52,7 @@ Built with Swift and AppKit. No third-party runtime dependencies, accounts, or s
 - Accessibility permission for MenuShelf.
 - Python 3 for the optional launch-at-login helper; available with current Xcode Command Line Tools installations.
 
-The app has been used locally on macOS 26.6.2 on Apple Silicon. Other supported system versions and Intel builds have not been manually verified.
+The app has been used locally on macOS 26.6.2 on Apple Silicon. The universal release includes both arm64 and x86_64. A command-line smoke test has been run natively and through Rosetta; a physical Intel Mac and other macOS versions have not been manually verified.
 
 ## Build and install
 
